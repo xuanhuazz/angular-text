@@ -1,0 +1,11 @@
+<h2>Home's name</h2>
+<ul>
+    <li *ngFor='let h of home' (click)='displayName(h)'>
+        <a routerLink="/detail/{{h.id}}">
+          <span>id:{{h.id}}</span><span>name:{{h.name}}</span>  
+        </a>
+        
+    </li>
+</ul>
+<!-- 给子组件传数据 -->
+<!-- <app-home-detail [home]='homeName'></app-home-detail> -->
