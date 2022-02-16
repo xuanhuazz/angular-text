@@ -8,7 +8,12 @@ import { HomeDetailComponent } from './home-detail/home-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SchoolComponent } from './school/school.component';
-
+//引入Http
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { RootComponent } from './root/root.component';
+import { FarComponent } from './far/far.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +21,17 @@ import { SchoolComponent } from './school/school.component';
     HomeDetailComponent,
     MessagesComponent,
     SchoolComponent,
+    RootComponent,
+    FarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

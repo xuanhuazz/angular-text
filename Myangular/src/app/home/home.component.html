@@ -1,4 +1,5 @@
 <h2>Home's name</h2>
+<ng-content></ng-content>
 <ul>
     <li *ngFor='let h of home' (click)='displayName(h)'>
         <a routerLink="/detail/{{h.id}}">
